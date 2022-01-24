@@ -27,6 +27,16 @@ open class AssistiveButton: UIButton {
         self.addTarget(self, action: #selector(AssistiveButton.tap), for: .touchUpInside)
     }
     
+    public init(frame: CGRect,normaltitle:String,highlightedtitle:String? = nil) {
+        super.init(frame: frame)
+        
+        self.setTitle(normaltitle, for: .normal)
+        self.setTitle(highlightedtitle, for: .highlighted)
+        self.adjustsImageWhenHighlighted = true
+        
+        self.addTarget(self, action: #selector(AssistiveButton.tap), for: .touchUpInside)
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
